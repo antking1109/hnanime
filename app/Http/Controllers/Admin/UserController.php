@@ -35,7 +35,7 @@ class UserController extends Controller
             'menu' => 'users',
             'navActive' => 'listUser',
         );
-        return view('admin.user.index', $result);
+        return view('admin.user.index', compact());
     }
 
     public function create(){

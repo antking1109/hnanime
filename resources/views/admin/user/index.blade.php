@@ -18,7 +18,7 @@
                         <i class="fa fa-plus"></i> <strong>Thêm mới</strong>
                     </a>
                     <div class="box-tools">
-                        <form name="formSearchUser" id="formSearchUser" action="{{url()->full()}}">
+                        <form name="formSearchUser" id="formSearchUser" >
                         <div class="input-group input-group-sm" style="width: 150px;">
                             <input type="text" name="search" class="form-control pull-right" placeholder="Tìm kiếm">
 
@@ -37,9 +37,9 @@
                             <i class="icon fa fa-check"></i> {{ session('success') }}
                         </div>
                     @endif
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="tblUser">
                         <tr>
-                            <th><a id="nameOrderLink" href="{{route('admin.user.index') . "?orderby=name&order=asc"}}">Tên người dùng <i id="nameOrder" class="icon fa  fa-sort"></i></a></th>
+                            <th><a id="nameOrderLink" href="{{(strpos(url()->full(), 'search') !== false) ? url()->full() . '&orderby=name&order=asc' : url()->full(). '?orderby=name&order=asc'}}">Tên người dùng <i id="nameOrder" class="icon fa  fa-sort"></i></a></th>
                             <th><a id="emailOrderLink" href="{{route('admin.user.index') . "?orderby=email&order=asc"}}">Địa chỉ email <i id="emailOrder" class="icon fa  fa-sort"></i></a></th>
                             <th>Vai trò</th>
                             <th>Bài viết</th>

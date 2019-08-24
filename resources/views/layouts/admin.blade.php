@@ -335,7 +335,7 @@
                     </a>
                 </li>
                 @if(Auth::user()->permission == 'admin')
-                    <li class="treeview @if(isset($menu) && $menu == 'users') menu-open" style="height: auto;@endif">
+                    <li class="treeview @if(isset($menu) && $menu == 'users') menu-open active" style="height: auto;@endif">
                         <a href="#">
                             <i class="fa  fa-users"></i>
                             <span>Thành viên</span>
